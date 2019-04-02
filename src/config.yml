@@ -1,0 +1,72 @@
+########################################
+## Slap Pro Plugin Made by Copvampire ##
+##                                    ##
+##               Help:                ##
+##   Cooldowns are timed in seconds   ##
+##                                    ##
+##    Place holders that are used:    ##
+##     %player%  -  Target player     ##
+##      %name%   -      Sender        ##
+##       %mob%   -     Mob Name       ##
+## %secondsLeft% -   Seconds Left     ##
+########################################
+
+## General ##
+Particles_Enabled: true
+Broadcast_Messages: true
+Slap_Push_Enabled: true
+Rocket_Push_Enabled: true
+Fish_Push_Players_Enabled: true
+Fish_Push_Mobs_Enabled: true
+Fish_Name_Change_Enabled: true
+CoolDowns_Enabled: true
+
+## Slap ##
+Slap_Cooldown: 60
+Slap_Prefix: '&7[&5Slap-Pro&7] '
+Slapper_Message: '&bYou have slapped &a%player%!'
+Slapped_Message: '&a%name% &bhas slapped you!'
+Slap_Cooldown_Massage: '&bYou must wait &a%secondsLeft% &bbefore your next slap!'
+
+Broadcast_Slap_Message: '&a%name% &bhas slapped %player%!'
+
+## Rocket ##
+Rocket_Cooldown: 60
+Rocket_Prefix: '&7[&cRocket-Pro&7] '
+Rocketter_Message: '&bYou sent &a%player% &bflying!'
+Rocketted_Message: '&a%name% &bhas sent you flying!'
+Rocket_Cooldown_Massage: '&bYou must wait &a%secondsLeft% &bbefore your next rocket!'
+
+Broadcast_Rocket_Message: '&a%name% &bhas sent %player% flying!'
+
+## Hurt ##
+Hurt_Cooldown: 60
+Hurt_Prefix: '&7[&bHurt-Pro&7] '
+Hurter_Message: '&bYou hurt &a%player%&b!'
+Hurtee_Message: '&a%name% &bhas hurt you!'
+Hurt_Cooldown_Massage: '&bYou must wait &a%secondsLeft% &bbefore your next hurt!'
+Hurt_Amount: 5
+
+Broadcast_Hurt_Message: '&a%name% &bhas hurt %player%`s feelings!'
+
+## Freeze ##
+Freeze_Prefix: '&7[&bFreeze-Pro&7] '
+Frozen_Message: '&bYou try to move but the ice has consumed you!'
+Freezer_Message: '&bYou have frozen &a%player%&b!'
+Freezed_Massage: '&a%name% &bthinks you should chill out!'
+UnFreezer_Message: '&bYou have unfrozen &a%player%&b!'
+UnFrozen_Message: '&a%name% &bthinks you have chilled out enough!'
+
+Broadcast_Frozen_Message: '&a%name% &bhas frozen %player%!'
+Broadcast_UnFrozen_Message: '&a%name% &bhas unfrozen %player%!'
+
+## Fish Slap Item ##
+Fish_Cooldown: 60
+Fish_Player_Messages_Enabled: true
+Fish_Slap_Message: '&bYou fish slapped &a%player%!'
+Fish_Slapped_Message: '&a%name% &bhas fish slapped you!'
+Fish_Item_Name: '&BFish Slapper &65000!'
+
+
+Fish_Mob_Messages_Enabled: true
+Mob_Fish_Slapped_Message: '&bYou fish slapped a &a%mob%!'

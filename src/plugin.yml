@@ -1,0 +1,25 @@
+name: Slap-Pro
+main: me.copvampire.Slap.Slap
+author: Copvampire
+description: Slap your players into shape! Now with Hurt!
+version: 2.0
+softdepend: [Citizens]
+commands:
+   reload:
+    description: Reload Slap.
+    permission: slap.reload
+   slap:
+    description: Slap a player.
+    permission: slap.slap.use
+   hurt:
+    description: Hurt a player.
+    permission: slap.hurt.use
+   rocket:
+    description: Rocket a player.
+    permission: slap.rocket.use
+   freeze:
+    description: Freeze a player.
+    permission: slap.freeze.use
+   test:
+    description: Freeze a player.
+    permission: slap.freeze.use
