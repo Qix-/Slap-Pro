@@ -26,14 +26,13 @@ public class FreezeCmd implements Listener, CommandExecutor{
 	  public void onPlayerMove(PlayerMoveEvent e) {
 		Player p = e.getPlayer();
 		if (this.frozen.contains(p.getName().toString())) {
-	      e.setTo(e.getFrom());
+			e.setTo(e.getFrom());
 			p.sendMessage(SlapLang.FREEZE_PREFIX + SlapLang.FROZEN_MESSAGE);
 		}
 		
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		
 		if (!(sender instanceof Player)){
 			sender.sendMessage("Only players can use this command");
 			return true;
@@ -84,9 +83,7 @@ public class FreezeCmd implements Listener, CommandExecutor{
 
 			player.sendMessage(SlapLang.FREEZE_PREFIX + ChatColor.GOLD + "Freeze somone by saying /freeze <name>");
 			return true;
-		}
-
-		else {
+		} else {
 			player.sendMessage(SlapLang.FREEZE_PREFIX + ChatColor.RED + "No permission!");
 		}
 

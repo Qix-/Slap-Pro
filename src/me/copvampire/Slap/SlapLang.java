@@ -37,8 +37,7 @@ public class SlapLang {
 	public static String BROAD_ROCKET_MESSAGE;
 	public static String BROAD_HURT_MESSAGE;
 
-	public static void loadMessages(Slap plugin){
-
+	public static void loadMessages(Slap plugin) {
 		SLAP_PREFIX = ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("Slap_Prefix"));
 		SLAPPER_MESSAGE = ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("Slapper_Message"));
 		SLAPPED_MESSAGE = ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("Slapped_Message"));

@@ -12,16 +12,12 @@ public class YMLHandler {
 	private File file;
 	protected static FileConfiguration config;
 	
-	public YMLHandler(Slap main, String filename) {
+	public YMLHandler(Slap main, String filename) throws IOException {
 		this.main = main;
 		this.file = new File(main.getDataFolder(), filename);
 		
 		if (!file.exists()) {
-			try {
-				file.createNewFile();
-			} catch (IOException e){
-				e.printStackTrace();
-			}
+			file.createNewFile();
 		}
 		YMLHandler.config = YamlConfiguration.loadConfiguration(file);
 		

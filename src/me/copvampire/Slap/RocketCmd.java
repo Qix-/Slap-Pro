@@ -13,13 +13,13 @@ import org.bukkit.util.Vector;
 public class RocketCmd implements CommandExecutor{
 
 	private Slap plugin;
+
 	public RocketCmd(Slap plugin){
 		this.plugin = plugin;
 	}
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-
 		if (!(sender instanceof Player)){
 			sender.sendMessage("Only players can use this command");
 			return true;
@@ -29,9 +29,7 @@ public class RocketCmd implements CommandExecutor{
 		int rocketcooldownTime = plugin.getConfig().getInt("Rocket_Cooldown");
 
 		if (player.hasPermission("slap.rocket.use")) {
-
 			if (args.length > 0) {
-
 				Player target = Bukkit.getServer().getPlayer(args[0]);
 
 				if (target == null) {
@@ -97,9 +95,7 @@ public class RocketCmd implements CommandExecutor{
 
 			player.sendMessage(SlapLang.ROCKET_PREFIX + ChatColor.GOLD + "Rocket somone by saying /rocket <name>");
 			return true;
-		}
-
-		else {
+		} else {
 			player.sendMessage(SlapLang.ROCKET_PREFIX + ChatColor.RED + "No permission!");
 		}
 

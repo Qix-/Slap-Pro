@@ -8,16 +8,13 @@ import org.bukkit.entity.Player;
 
 
 public class ThanosCmd implements CommandExecutor{
-
 	private Slap plugin;
 	public ThanosCmd(Slap plugin){
 		this.plugin = plugin;
 	}
 	
-
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-
 		if (!(sender instanceof Player)){
 			sender.sendMessage("Only players can use this command");
 			return true;
@@ -25,14 +22,7 @@ public class ThanosCmd implements CommandExecutor{
 
 		Player player = (Player)sender;
 
-		if (player.hasPermission("slap.thanos.use")) {
-
-			
-			
-			
-		}
-
-		else {
+		if (!player.hasPermission("slap.thanos.use")) {
 			player.sendMessage(SlapLang.ROCKET_PREFIX + ChatColor.RED + "No permission!");
 		}
 

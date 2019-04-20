@@ -61,9 +61,6 @@ public class Slap extends JavaPlugin implements Listener {
 		SlapLang.loadMessages(this);
 		
 	    this.citizensEnabled = Bukkit.getPluginManager().getPlugin("Citizens") != null;
-	    
-	    
-		
 	}
 
 	public void onDisable(){

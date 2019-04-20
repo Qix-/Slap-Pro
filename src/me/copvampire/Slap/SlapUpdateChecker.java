@@ -40,12 +40,13 @@ public class SlapUpdateChecker{
 	 * @return true if the query was successfully
 	 */
 	public boolean queryUpdateCheck(){
-		try(BufferedReader reader = new BufferedReader(new InputStreamReader(new URL(queryURL).openStream()))){
-
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(new URL(queryURL).openStream()))) {
 			StringBuilder jsonRaw = new StringBuilder();
 			String currentLine;
-			while ((currentLine = reader.readLine()) != null)
+
+			while ((currentLine = reader.readLine()) != null) {
 				jsonRaw.append(currentLine);
+			}
 
 			JSONParser jsonParser = new JSONParser();
 			JSONObject json = (JSONObject) ((JSONArray) jsonParser.parse(jsonRaw.toString())).get(0);
@@ -57,10 +58,12 @@ public class SlapUpdateChecker{
 			String[] newValues = newestVersion.split("\\.");
 			String[] currentValues = currentVersion.split("\\.");
 			for (int i = 0; i < (currentValues.length > newValues.length ? currentValues.length : newValues.length); i++){
-				if (i >= newValues.length){
+				if (i >= newValues.length) {
 					this.requiresUpdate = true;
 					break;
-				} else if (i >= currentValues.length) break;
+				} else if (i >= currentValues.length) {
+					break;
+				}
 
 				int newValue = Integer.parseInt(newValues[i]);
 				int currentValue = Integer.parseInt(currentValues[i]);
@@ -73,8 +76,8 @@ public class SlapUpdateChecker{
 			}
 
 			return true;
-		}
-		catch(IOException | ParseException | NumberFormatException e){ return false; 
+		} catch(IOException | ParseException | NumberFormatException e){
+			return false; 
 		}
 	}
 

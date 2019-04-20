@@ -65,18 +65,18 @@ public class SlapFish implements Listener{
 						target.setVelocity(product);
 					}
 
-						if (plugin.getConfig().getBoolean("Fish_Player_Messages_Enabled")){
-							String fishslapperMessage = new String(SlapLang.FSLAPPER_MESSAGE).replace("%player%", String.valueOf(target.getName()));
-							String fishslappedMessage = new String(SlapLang.FSLAPPED_MESSAGE).replace("%name%", String.valueOf(damager.getName()));
-							damager.sendMessage(SlapLang.SLAP_PREFIX + fishslapperMessage);
-							target.sendMessage(SlapLang.SLAP_PREFIX + fishslappedMessage);
+					if (plugin.getConfig().getBoolean("Fish_Player_Messages_Enabled")){
+						String fishslapperMessage = new String(SlapLang.FSLAPPER_MESSAGE).replace("%player%", String.valueOf(target.getName()));
+						String fishslappedMessage = new String(SlapLang.FSLAPPED_MESSAGE).replace("%name%", String.valueOf(damager.getName()));
+						damager.sendMessage(SlapLang.SLAP_PREFIX + fishslapperMessage);
+						target.sendMessage(SlapLang.SLAP_PREFIX + fishslappedMessage);
 
-						}
+					}
 
-						if (plugin.getConfig().getBoolean("Particles_Enabled")){
-							(target.getWorld()).spawnParticle(Particle.CLOUD, target.getLocation(), 45, 0.45, 0.45, 0.45, 0.15);
-						}
-					}	
+					if (plugin.getConfig().getBoolean("Particles_Enabled")){
+						(target.getWorld()).spawnParticle(Particle.CLOUD, target.getLocation(), 45, 0.45, 0.45, 0.45, 0.15);
+					}
+				}	
 			}
 		}
 
@@ -93,14 +93,14 @@ public class SlapFish implements Listener{
 					Vector product = damager.getLocation().getDirection().multiply(2);
 
 					if (plugin.getConfig().getBoolean("Fish_Name_Change_Enabled")){
-					String fishitemname = new String(SlapLang.FISH_ITEM_NAME);//.replace("%counter%", String.valueOf(hitCounter.get(damager)));
-					hitCounter.put(damager, hitCounter.get(damager) + 1);
-					
-					ItemStack fish = damager.getInventory().getItemInMainHand();
-					ItemMeta fishMeta = fish.getItemMeta();
-					fishMeta.setDisplayName(SlapLang.SLAP_PREFIX + fishitemname);
-					fish.setItemMeta(fishMeta);
-					damager.getInventory().setItemInMainHand(fish);
+						String fishitemname = new String(SlapLang.FISH_ITEM_NAME);//.replace("%counter%", String.valueOf(hitCounter.get(damager)));
+						hitCounter.put(damager, hitCounter.get(damager) + 1);
+						
+						ItemStack fish = damager.getInventory().getItemInMainHand();
+						ItemMeta fishMeta = fish.getItemMeta();
+						fishMeta.setDisplayName(SlapLang.SLAP_PREFIX + fishitemname);
+						fish.setItemMeta(fishMeta);
+						damager.getInventory().setItemInMainHand(fish);
 					}
 					
 					if (target.isOnGround() && product.getY() < 0.0)
@@ -120,8 +120,6 @@ public class SlapFish implements Listener{
 					}
 				}			
 			}
-
 		}
-
 	}
 }
